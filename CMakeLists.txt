@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED 17)
 
 enable_testing()
 
+set(GCC_COMPILE_FLAGS "-Werror -Wall -Wextra")
+
 if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
    message(STATUS "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
    file(DOWNLOAD "https://raw.githubusercontent.com/conan-io/cmake-conan/master/conan.cmake"
