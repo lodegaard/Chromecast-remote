@@ -1,0 +1,17 @@
+add_executable(KeyboardDeviceListTests KeyboardDeviceListTests.cpp)
+target_link_libraries(KeyboardDeviceListTests CONAN_PKG::gtest keyboarddevice)
+target_include_directories(KeyboardDeviceListTests PUBLIC ../src)
+
+add_test(NAME KeyboardDeviceList_Tests COMMAND KeyboardDeviceListTests)
+
+add_executable(KeyboardDeviceHandlerTests KeyboardDeviceHandlerTests.cpp)
+target_link_libraries(KeyboardDeviceHandlerTests CONAN_PKG::gtest keyboarddevice)
+target_include_directories(KeyboardDeviceHandlerTests PUBLIC ../src)
+
+add_test(NAME KeyboardDeviceHandler_Tests COMMAND KeyboardDeviceHandlerTests)
+
+add_executable(RemotePresenterTests RemotePresenterTests.cpp)
+target_link_libraries(RemotePresenterTests CONAN_PKG::gtest keyboarddevice)
+target_include_directories(RemotePresenterTests PUBLIC ../src)
+
+add_test(NAME RemotePresenter_Tests COMMAND RemotePresenterTests)

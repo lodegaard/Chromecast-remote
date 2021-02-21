@@ -1,0 +1,3 @@
+add_subdirectory(Device)
+add_subdirectory(KeyboardDevice)
+add_subdirectory(Publisher)
