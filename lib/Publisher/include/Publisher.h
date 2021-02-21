@@ -10,7 +10,8 @@
 class Publisher
 {
 public:
-    Publisher(asio::io_context& ioContext, asio::ip::udp::socket& socket, asio::ip::udp::endpoint& endpoint);
+    Publisher(asio::io_context& ioContext, asio::ip::udp::socket& socket,
+              asio::ip::udp::endpoint& endpoint);
 
     void publish(const std::string& json);
 

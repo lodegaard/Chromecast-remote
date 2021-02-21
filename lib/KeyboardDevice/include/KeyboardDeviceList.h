@@ -2,12 +2,13 @@
 
 #include <map>
 #include <memory>
-#include <vector>
 #include <string>
+#include <vector>
 
 struct dirent;
 class KeyboardDeviceHandler;
-namespace asio {
+namespace asio
+{
 class io_context;
 }
 
@@ -21,7 +22,8 @@ public:
 
     KeyboardDeviceList(asio::io_context& ioContext);
 
-    std::shared_ptr<KeyboardDeviceHandler> getDeviceHandler(const DeviceInfo& deviceInfo) const;
+    std::shared_ptr<KeyboardDeviceHandler> getDeviceHandler(
+        const DeviceInfo& deviceInfo) const;
 
     std::string getDeviceListString() const;
 
@@ -35,4 +37,5 @@ private:
     void scan();
 };
 
-bool operator<(const KeyboardDeviceList::DeviceInfo& lhs, const KeyboardDeviceList::DeviceInfo& rhs);
+bool operator<(const KeyboardDeviceList::DeviceInfo& lhs,
+               const KeyboardDeviceList::DeviceInfo& rhs);

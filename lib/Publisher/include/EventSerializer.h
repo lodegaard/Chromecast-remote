@@ -1,8 +1,8 @@
 #pragma once
 
-#include "RemotePresenter.h"
-
 #include <string>
+
+#include "RemotePresenter.h"
 
 class EventSerializer
 {

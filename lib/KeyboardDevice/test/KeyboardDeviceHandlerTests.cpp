@@ -4,10 +4,10 @@
 
 #include <asio.hpp>
 #include <filesystem>
+#include <memory>
 #include <string>
 #include <unordered_map>
 #include <vector>
-#include <memory>
 
 #include "Device.h"
 #include "InputEvent.h"
@@ -60,8 +60,8 @@ TEST_F(KeyboardDeviceHandlerTests,
        constructDeviceHandle_sendKeyEventNoError_deviceHandleFunctionCalledOnce)
 {
     EXPECT_CALL(*device, handleInputEvent(InputEvent{InputEvent::Type::keyboard,
-                                                    InputEvent::Action::press,
-                                                    KEY_PLAYPAUSE}))
+                                                     InputEvent::Action::press,
+                                                     KEY_PLAYPAUSE}))
         .Times(1);
 
     auto stream = make_shared<DummyStream>(
@@ -76,8 +76,8 @@ TEST_F(KeyboardDeviceHandlerTests,
        constructDeviceHandle_noKeyEventNoError_deviceHandleFunctionNotCalled)
 {
     EXPECT_CALL(*device, handleInputEvent(InputEvent{InputEvent::Type::keyboard,
-                                                    InputEvent::Action::press,
-                                                    KEY_PLAYPAUSE}))
+                                                     InputEvent::Action::press,
+                                                     KEY_PLAYPAUSE}))
         .Times(0);
 
     auto stream =
@@ -92,8 +92,8 @@ TEST_F(
     constructDeviceHandle_sendKeyEventWithError_deviceHandleFunctionNotCalled)
 {
     EXPECT_CALL(*device, handleInputEvent(InputEvent{InputEvent::Type::keyboard,
-                                                    InputEvent::Action::press,
-                                                    KEY_PLAYPAUSE}))
+                                                     InputEvent::Action::press,
+                                                     KEY_PLAYPAUSE}))
         .Times(0);
 
     auto stream = make_shared<DummyStream>(
@@ -108,9 +108,9 @@ TEST_F(
     KeyboardDeviceHandlerTests,
     constructDeviceHandle_sendNonKeyEventNoError_deviceHandleFunctionCalledOnce)
 {
-    EXPECT_CALL(*device, handleInputEvent(InputEvent{InputEvent::Type::unknown,
-                                                    InputEvent::Action::unknown,
-                                                    REL_RX}))
+    EXPECT_CALL(*device, handleInputEvent(
+                             InputEvent{InputEvent::Type::unknown,
+                                        InputEvent::Action::unknown, REL_RX}))
         .Times(1);
 
     auto stream = make_shared<DummyStream>(

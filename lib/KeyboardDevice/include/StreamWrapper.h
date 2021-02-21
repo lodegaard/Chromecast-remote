@@ -12,4 +12,3 @@ public:
 
     virtual void readAsync(const asio::mutable_buffer&, Handler) = 0;
 };
-

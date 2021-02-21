@@ -1,13 +1,13 @@
 #pragma once
 
-#include "Device.h"
-#include "InputEvent.h"
-
 #include <functional>
+#include <map>
 #include <memory>
 #include <ostream>
 #include <vector>
-#include <map>
+
+#include "Device.h"
+#include "InputEvent.h"
 
 namespace asio
 {
@@ -18,7 +18,7 @@ class RemotePresenter : public Device
 {
 public:
     using KeyEventHandler = std::function<void()>;
-    
+
     enum class Key {
         unknown,
         power,
@@ -41,8 +41,10 @@ public:
     };
 
     RemotePresenter(asio::io_context& ioContext);
-    
-    void registerKeyEventHandler(const Key& key, const InputEvent::Action& action, KeyEventHandler handler);
+
+    void registerKeyEventHandler(const Key& key,
+                                 const InputEvent::Action& action,
+                                 KeyEventHandler handler);
 
     static std::string toString(Key key);
 

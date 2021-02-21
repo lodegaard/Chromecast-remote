@@ -1,25 +1,14 @@
 #pragma once
 
-#include <tuple>
-#include <string>
 #include <ostream>
+#include <string>
+#include <tuple>
 
-struct InputEvent
-{
-    enum class Type
-    {
-        unknown,
-        keyboard
-    };
+struct InputEvent {
+    enum class Type { unknown, keyboard };
 
-    enum class Action
-    {
-        unknown,
-        press,
-        release,
-        hold
-    };
-    
+    enum class Action { unknown, press, release, hold };
+
     Type type;
     Action action;
     int key;
@@ -35,5 +24,6 @@ inline std::ostream& operator<<(std::ostream& out, InputEvent::Action action)
 
 inline bool operator==(const InputEvent& lhs, const InputEvent& rhs)
 {
-    return std::tie(lhs.type, lhs.action, lhs.key) == std::tie(rhs.type, rhs.action, rhs.key);
+    return std::tie(lhs.type, lhs.action, lhs.key) ==
+           std::tie(rhs.type, rhs.action, rhs.key);
 }

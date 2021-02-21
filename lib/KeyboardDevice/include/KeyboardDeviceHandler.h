@@ -1,12 +1,13 @@
 #pragma once
 
-#include "InputEvent.h"
-#include "DeviceHandler.h"
+#include <linux/input.h>
 
 #include <asio.hpp>
 #include <memory>
 #include <vector>
-#include <linux/input.h>
+
+#include "DeviceHandler.h"
+#include "InputEvent.h"
 
 class Device;
 class StreamWrapper;
@@ -15,7 +16,7 @@ class KeyboardDeviceHandler : public DeviceHandler
 {
 public:
     KeyboardDeviceHandler(
-        asio::io_context& ioContext, 
+        asio::io_context& ioContext,
         const std::vector<std::shared_ptr<StreamWrapper>>& streams);
 
     /// DeviceHandler interface implementation

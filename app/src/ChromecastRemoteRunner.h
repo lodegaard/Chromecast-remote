@@ -1,8 +1,8 @@
 #pragma once
 
 #include <asio.hpp>
-#include <string>
 #include <memory>
+#include <string>
 
 class KeyboardDeviceHandler;
 class KeyboardDeviceList;
@@ -12,7 +12,8 @@ class RemotePresenter;
 class ChromecastRemoteRunner
 {
 public:
-    ChromecastRemoteRunner(const std::string& destinationIp, unsigned short port);
+    ChromecastRemoteRunner(const std::string& destinationIp,
+                           unsigned short port);
     ~ChromecastRemoteRunner();
 
     void run();
