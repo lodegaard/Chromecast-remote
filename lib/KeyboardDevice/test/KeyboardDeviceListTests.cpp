@@ -3,12 +3,14 @@
 
 #include <asio.hpp>
 #include <cstring>
-#include <filesystem>
+#include <experimental/filesystem>
+// #include <filesystem>
 #include <iostream>
 
 #include "KeyboardDeviceList.h"
 
 using namespace std;
+using namespace std::experimental;
 using namespace testing;
 
 struct KeyboardDeviceListTests : public Test {
@@ -19,14 +21,15 @@ struct KeyboardDeviceListTests : public Test {
 
     static int numInputDevices()
     {
-        vector<filesystem::path> eventPaths;
-        for (const auto& entry : filesystem::directory_iterator{"/dev/input"}) {
-            if (strncmp("event", entry.path().filename().c_str(), 5) == 0) {
-                eventPaths.push_back(entry.path());
-            }
-        }
+        // vector<filesystem::path> eventPaths;
+        // for (const auto& entry : filesystem::directory_iterator{"/dev/input"}) {
+        //     if (strncmp("event", entry.path().filename().c_str(), 5) == 0) {
+        //         eventPaths.push_back(entry.path());
+        //     }
+        // }
 
-        return eventPaths.size();
+        // return eventPaths.size();
+        return 0;
     }
 };
 
