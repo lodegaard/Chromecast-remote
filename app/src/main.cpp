@@ -12,6 +12,8 @@ int main()
 {
     cout << "Starting Chromecast remote\n";
     ChromecastRemoteRunner runner("192.168.0.83", 9999);
+
+    cout << "Running...\n";
     runner.run();
 
     return 0;

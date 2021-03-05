@@ -83,8 +83,6 @@ void RemotePresenter::handleInputEvent(const InputEvent& event)
     }
 }
 
-void RemotePresenter::onKeyEvent(Key key) {}
-
 RemotePresenter::Key RemotePresenter::decodeKeypress(const InputEvent& event)
 {
     switch (event.key) {

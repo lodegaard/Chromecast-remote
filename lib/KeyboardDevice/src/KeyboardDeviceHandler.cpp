@@ -39,7 +39,7 @@ void KeyboardDeviceHandler::handleInput(const asio::error_code& ec,
 {
     if (!ec) {
         const auto numEvents = bytes / sizeof(input_event);
-        int currentEvent = 0;
+        unsigned currentEvent = 0;
         for (const auto& event : m_events) {
             if (currentEvent >= numEvents) break;
 

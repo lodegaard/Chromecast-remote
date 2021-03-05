@@ -57,7 +57,6 @@ private:
     asio::io_context& m_ioContext;
     std::map<KeyEvent, std::vector<KeyEventHandler>> m_keyActions;
 
-    void onKeyEvent(Key key);
     Key decodeKeypress(const InputEvent& event);
 };
 

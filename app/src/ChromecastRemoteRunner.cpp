@@ -53,4 +53,5 @@ void ChromecastRemoteRunner::registerKeyEventPublishers()
                 m_publisher->publish(EventSerializer::serializeEvent(key));
             });
     }
+    cout << "All events registered\n";
 }
